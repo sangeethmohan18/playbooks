@@ -1,0 +1,9 @@
+---
+- name: copying artifacts to deployment server
+  
+  become: true
+  tasks:
+  	- name: copy artifact to deployment server
+  	  copy:
+  	  	src: /artifact/my-app-1.0-SNAPSHOT.jar
+  	  	dest: /home/ubuntu
