@@ -1,6 +1,7 @@
 --- 
 - name: playbook that creates user
   become: true
+  become_method: sudo
   hosts: all
   name: "adding user in deployment server"
   tasks: 
