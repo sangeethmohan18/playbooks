@@ -1,0 +1,14 @@
+---
+- name: changinghostname
+  hosts: testgrp
+  become: true
+  tasks:
+     - name: change hostname to newname
+       hostname:
+          name: "newname"
+     - name: adding entry to hosts
+       lineinfile:
+          dest: /etc/hosts
+          regexp: '^127\.0\.0\.1[ \t]+localhost'
+          line: '127.0.0.1 localhost newname'
+          state: present
