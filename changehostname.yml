@@ -1,6 +1,6 @@
 ---
 - name: changinghostname
-  hosts: testgrp
+  hosts: all
   become: true
   tasks:
      - name: change hostname to newname
