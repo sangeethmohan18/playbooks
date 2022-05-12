@@ -2,6 +2,7 @@
 - name: changinghostname
   hosts: all
   become: true
+  become_method: root
   tasks:
      - name: change hostname to newname
        hostname:
